@@ -1,0 +1,8 @@
+<Options>
+<tranCode><name>VIW</name><method>PreviewOp</method></tranCode>
+<tranCode><name>PRN</name><method>PrintNowOp</method></tranCode>
+<tranCode><name>PRO</name><method>PrintNowOp</method></tranCode>
+<tranCode><name>PRL</name><method>PrintLocallyOp</method></tranCode>
+<tranCode><name>BTA</name><method>PrintNowOp</method></tranCode>
+<tranCode><name>BTD</name><method>BatchPrintingOp</method></tranCode>
+</Options>

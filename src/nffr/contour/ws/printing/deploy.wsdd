@@ -1,0 +1,147 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from NfPrintingService WSDL service -->
+
+  <service name="NfPrintingServiceSOAP" provider="java:RPC" style="document" use="literal">
+      <parameter name="wsdlTargetNamespace" value="urn:printing.ws.contour.nffr/0.2.2"/>
+      <parameter name="wsdlServiceElement" value="NfPrintingService"/>
+      <parameter name="schemaQualified" value="urn:printing.ws.contour.nffr/0.2.2"/>
+      <parameter name="schemaUnqualified" value="http://schemas.contour.nffr/NfPrintingService/"/>
+      <parameter name="wsdlServicePort" value="NfPrintingServiceSOAP"/>
+      <parameter name="className" value="nffr.contour.ws.printing.NfPrintingServiceSOAPHttpSkeleton"/>
+      <parameter name="wsdlPortType" value="NfPrintingServicePT"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <parameter name="allowedMethods" value="*"/>
+
+      <typeMapping
+        xmlns:ns="urn:printing.ws.contour.nffr/0.2.2"
+        qname="ns:EndFlagType"
+        type="java:java.lang.String"
+        serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="urn:printing.ws.contour.nffr/0.2.2"
+        qname="ns:URLMessageType"
+        type="java:java.lang.String"
+        serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="urn:printing.ws.contour.nffr/0.2.2"
+        qname="ns:CcType"
+        type="java:java.lang.String"
+        serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="urn:printing.ws.contour.nffr/0.2.2"
+        qname="ns:NfPrintingResponseType"
+        type="java:nffr.contour.ws.printing.NfPrintingResponseType"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="urn:printing.ws.contour.nffr/0.2.2"
+        qname="ns:FromType"
+        type="java:java.lang.String"
+        serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="urn:printing.ws.contour.nffr/0.2.2"
+        qname="ns:CommentType"
+        type="java:java.lang.String"
+        serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="urn:printing.ws.contour.nffr/0.2.2"
+        qname="ns:MessageTypeType"
+        type="java:nffr.contour.ws.printing.MessageTypeType"
+        serializer="org.apache.axis.encoding.ser.EnumSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.EnumDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="urn:printing.ws.contour.nffr/0.2.2"
+        qname="ns:NfPrintingMessageType"
+        type="java:nffr.contour.ws.printing.NfPrintingMessageType"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="urn:printing.ws.contour.nffr/0.2.2"
+        qname="ns:DocIdType"
+        type="java:java.lang.String"
+        serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="urn:printing.ws.contour.nffr/0.2.2"
+        qname="ns:ReissuingType"
+        type="java:nffr.contour.ws.printing.ReissuingType"
+        serializer="org.apache.axis.encoding.ser.EnumSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.EnumDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="urn:printing.ws.contour.nffr/0.2.2"
+        qname="ns:ErrorCodeType"
+        type="java:java.math.BigInteger"
+        serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="urn:printing.ws.contour.nffr/0.2.2"
+        qname="ns:ErrorTextType"
+        type="java:java.lang.String"
+        serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="urn:printing.ws.contour.nffr/0.2.2"
+        qname="ns:DataType"
+        type="java:java.lang.String"
+        serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="urn:printing.ws.contour.nffr/0.2.2"
+        qname="ns:ToType"
+        type="java:java.lang.String"
+        serializer="org.apache.axis.encoding.ser.SimpleSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.SimpleDeserializerFactory"
+        encodingStyle=""
+      />
+      <typeMapping
+        xmlns:ns="urn:printing.ws.contour.nffr/0.2.2"
+        qname="ns:BatchPrintingMessageType"
+        type="java:nffr.contour.ws.printing.BatchPrintingMessageType"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+  </service>
+</deployment>
